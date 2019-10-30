@@ -1,10 +1,14 @@
 class OrganizationsController < ApplicationController
-  before_action :find_organization
+  before_action :find_organization, only: [:show]
 
   def new
+    @organization = Organization.new
+  end
+
+  def create
     @organization = Organization.new(organization_params)
-    if @restaurant.save
-      redirect_to restaurant_path(@restaurant)
+    if @organization.save
+      redirect_to organization_path(@organization)
     else
       render :new
     end
