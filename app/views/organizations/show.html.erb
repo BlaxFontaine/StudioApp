@@ -1,2 +1,9 @@
-<h1>Your organization</h1>
-<h2><%= @organization.name %></h2>
+<h1>Your organization: <%= @organization.name %></h1>
+<h2>Nodes:</h2>
+<ul>
+  <% @nodes.each do |node| %>
+    <li><%= node.name %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'create node', new_organization_node_path(@organization) %>

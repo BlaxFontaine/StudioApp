@@ -1,21 +1,38 @@
 class NodesController < ApplicationController
-before_action :find_node, only: [:show]
+before_action :find_node, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @nodes = Node.all
+  end
+
+  def show
+  end
 
   def new
+    # @organization = Organization.find(params[:parent_id])
     @node = Node.new
   end
 
   def create
     @node = Node.new(node_params)
+    # @organization = Organization.find(params[:parent_id])
+    @node.organization = @organization
     if @node.save
-      redirect_to node_path(@node)
+      redirect_to organization_path(@organization)
     else
       render :new
     end
   end
 
-  def show
+  def edit
+  end
 
+  def update
+    if @node.update(node_params)
+      redirect_to organization_node_path(@node)
+    else
+      render :edit
+    end
   end
 
   private

@@ -1,6 +1,10 @@
 class OrganizationsController < ApplicationController
   before_action :find_organization, only: [:show]
 
+  def show
+    @nodes = Node.where(ancestry: params[:id])
+  end
+
   def new
     @organization = Organization.new
   end
@@ -12,10 +16,6 @@ class OrganizationsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-
   end
 
   private

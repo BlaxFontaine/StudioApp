@@ -1,0 +1,6 @@
+<%= form_for(@node, url: new_organization_node_path, method: :get) do |f| %>
+  <%= f.hidden_field :parent_id %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
