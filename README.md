@@ -1,24 +1,4 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* I used devise for authentification because it allows to have a secure login.
+* I wanted to use the ancestry gem that allows to create a tree structure. I should have put the organization as the root
