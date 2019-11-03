@@ -21,7 +21,7 @@ class OrganizationsController < ApplicationController
   private
 
   def find_organization
-    @organization = Organization.find(params[:id])
+    @organization = Organization.find(current_organization.id)
   end
 
   def organization_params
