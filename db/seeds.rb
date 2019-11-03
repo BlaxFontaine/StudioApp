@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Organization.create([{ name: 'Google' }, { name: 'Facebook' }])
+
